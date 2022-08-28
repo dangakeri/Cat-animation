@@ -68,31 +68,6 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Animation'),
-        leading: Builder(builder: (context) {
-          return IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          );
-        }),
-      ),
-      drawer: Drawer(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            SizedBox(height: 40),
-            ListTile(
-              leading: CircleAvatar(),
-              title: Text('Home'),
-              trailing: Text('99+'),
-            ),
-          ],
-        ),
-      ),
       body: GestureDetector(
         onTap: onTap,
         child: Center(
@@ -107,10 +82,6 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
       ),
     );
   }
@@ -134,7 +105,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     return Container(
       height: 200.0,
       width: 200.0,
-      color: Colors.brown,
+      color: Colors.blue,
     );
   }
 
@@ -146,7 +117,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
           child: Container(
             height: 10.0,
             width: 125.0,
-            color: Colors.brown,
+            color: Colors.blue,
           ),
           builder: (context, child) {
             return Transform.rotate(
@@ -166,7 +137,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
           child: Container(
             height: 10.0,
             width: 125.0,
-            color: Colors.brown,
+            color: Colors.blue,
           ),
           builder: (context, child) {
             return Transform.rotate(

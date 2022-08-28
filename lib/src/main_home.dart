@@ -21,8 +21,50 @@ class _MainHomeState extends State<MainHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Animation'),
+        leading: Builder(builder: (context) {
+          return IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        }),
+      ),
+      drawer: Drawer(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            SizedBox(
+              height: 50,
+              width: 20,
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              selectedColor: Colors.black,
+              iconColor: Colors.black,
+            ),
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('About'),
+              subtitle: Text('About developer'),
+              selectedColor: Colors.black,
+              iconColor: Colors.black,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
       body: pages[index],
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: index,
         onTap: (value) {
           setState(() {
             index = value;
